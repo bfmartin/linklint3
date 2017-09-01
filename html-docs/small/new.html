@@ -1,0 +1,380 @@
+<html><head><title>
+
+Linklint Documentation - What's New
+
+</title>
+
+</head><body text="#000000" link="#6666aa" vlink="#6688aa" alink="#6688aa" bgcolor="#ffffff">  
+
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=5>
+<a name=top>
+Linklint Documentation - What's New
+</a>
+</font>
+
+
+
+<table cellpadding=0 cellspacing=2 border=0 width="90%">
+<tr><td bgcolor="#8888dd"><img src=dot.gif alt="" width=1 height=1></td></tr>
+</table>
+
+
+<font size=3>
+Version 2.3.4 August 8, 2001
+</font>
+<p>
+<table cellpadding=0 cellspacing=1 border=0><tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+
+
+</td></tr>
+</table></td></tr></table>
+
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+</table></td></tr></table>
+
+</td></tr>
+
+<tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="white" align=right>
+<font size=2 face="helvetica,sans serif,ariel"><font color="#8888dd"><b>
+documentation
+</b></font></font>
+</td></tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="index.html">
+Introduction
+</a>
+</font></td>
+
+<td align=center bgcolor="white">
+<font size=2 face="helvetica,sans serif,ariel"><font color="#dd6666">
+What's&nbsp;New
+</font>
+
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="inputs.html">
+Inputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="outputs.html">
+Outputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="hints.html">
+Hints
+</a>
+</font></td>
+  
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="howitworks.html">
+How it works
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="doc_index.html">
+Index
+</a>
+</font></td>
+
+</tr>
+</table></td></tr></table>
+
+</td></tr>
+
+</font>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel">
+<blockquote>
+
+Few changes.  Almost 100% backward compatible (output index files
+are now <i>index.*</i> by default instead of <i>linklint.*</i>).
+Existing command files should still work.
+
+<p>
+
+<font color="#cc0000"><tt><b>Query string support for HTTP site checking has changed</b></tt></font>
+as of 2.3.4.  This may change how Linklint checks your HTTP site if
+you have dynamic content.  It now does "the right thing" by default.
+Use the <font color="#cc0000"><tt><b>-no_query_string</b></tt></font> flag to get back the old
+behavior.
+
+
+<ul>
+<li> Linklint is free again
+<li> Better query string support (as of 2.3.4)
+<li> Proxy support for site checking
+<li> Output files are more configurable
+<li> Input from STDIN
+<li> Beta SSL support now available
+<li> Looks for Java Archive .jar files
+</ul>
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+GNU General Public License
+</b></font>
+</font></td></tr></table>
+<p>
+
+Linklint started out free.  It became sharewhare when the flood
+of comments, suggestions and questions started turning it into a
+"full-time" job.  <b>Thanks to all who contributed!</b> With the
+rise (and love) of Linux, we wanted to make it Open Source in a
+way that would not make previous contributors feel ripped off.
+
+<p>
+
+There was a gradual (unadvertised) change to Open Source.  First, it
+was made free for use on Open Source operating systems.  Then a GPL
+Open Source version was distributed as a part of the Meta Web Language
+system and shareware checks were no longer cashed.  With the new
+Linklint web site, it is only being distributed as Open Source via the
+<b><a href=license.html>GNU General Public License</a></b>.
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Better Query String Support
+</b></font>
+</font></td></tr></table>
+<p>
+
+Query strings were suppressed during site checks.  This can be changed
+by commenting out one line in older versions.  As of 2.3.4, query
+strings are used in HTTP site checks.  To get the old behavior use the
+new <font color="#cc0000"><tt><b>-no_query_string</b></tt></font> flag.
+
+<p>
+
+If you have an older version of Linklint, you can get the new query
+string behavior by commenting out the one line that includes the
+comment "<i>strip query string</i>".  This also applies to the
+<b>2.4.beta</b> version.
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Proxy Support for Site Checking
+</b></font>
+</font></td></tr></table>
+<p>
+
+Previously, proxy support was only for remote-URL checking.  Now proxy
+support has been extended to handle site checking as well.  The
+conflict between proxies and virtual hosts has been resolved.
+
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Output Options
+</b></font>
+</font></td></tr></table>
+<p>
+
+
+<font color="#cc0000"><tt><b>-output_index xxxx</b></tt></font>
+
+The index output files were previously named <i>linklint.*</i> in
+order to prevent overwriting existing <i>index.html</i> files if the
+<i>-doc</i> directory collided with an existing HTML directory.  By
+popular demand, these file names have been changed to <i>index.*</i>.
+This is more convenient for most, and a little more dangerous for a
+few.  You can change back to <i>linklint</i> (or whatever) with the
+<b>-output_index</b> option.
+
+<p>
+
+<font color="#cc0000"><tt><b>-output_frames</b></tt></font> 
+
+Uses &lt;base&gt; tags in the output files so that new browser windows
+will open when following links in the HTML output files.  This
+prevents having to reload large output HTML files.
+
+<p>
+
+<font color="#cc0000"><tt><b> -url_doc_prefix some_prefix</b></tt></font> 
+
+Gives control over the prefix of all output files associated with
+<b>Remote-Url</b> checking.
+
+<p>
+
+<font color="#cc0000"><tt><b> -dont_output xxx</b></tt></font>
+
+Suppress output of files that match <b><tt>/xxx/</tt></b>.  In the
+past, I have told people to comment out lines in the program to
+suppress the generation of certain output files.
+
+<p>
+<font color="#cc0000"><tt><b> -no_warn_index</b></tt></font>
+
+Turns of the "index file not found" warning.  Applies to local site
+checking only.
+
+<p>
+
+<font color="#cc0000"><tt><b>-concise_url</b></tt></font>
+
+Turns off printing successful URLs to STDOUT during remote link
+checking.
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Read inputs from STDIN (keyboard)
+</b></font>
+</font></td></tr></table>
+<p>
+
+<p>
+
+<font color="#cc0000"><tt><b> @ </b></tt></font> or <font color="#cc0000"><tt><b> @STDIN</b></tt></font> will cause Linklint to read from STDIN (keyboard)
+as if it were an <tt><b>@command</b></tt> file. 
+
+Great when you are using linklint from the shell and run out of space
+on the command line.
+
+Might make runing Linklint as a CGI program a little easier.
+
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Other New Flags
+</b></font>
+</font></td></tr></table>
+<p>
+
+<font color="#cc0000"><tt><b> -help_all</b></tt></font>
+
+<font color="#cc0000"><tt><b> -version</b></tt></font> 
+
+<font color="#cc0000"><tt><b> -license</b></tt></font> are all pretty obvious.
+
+<br>
+
+<font color="#cc0000"><tt><b>-no_query_string</b></tt></font>
+Don't use query strings in HTTP site checks
+<br>
+
+<font color="#cc0000"><tt><b>-http_header Xxx:Yyy</b></tt></font>
+Add header lines to HTTP requests.
+<br>
+
+<font color="#cc0000"><tt><b>-language zz</b></tt></font>
+Add <i>Accept-Language</i> header line to HTTP requests.
+
+<p>
+<table bgcolor="#88aacc" width="85%" cellpadding=3 cellspacing=0 border=0>
+<tr><td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+Beta Version with SSL Support
+</b></font>
+</font></td></tr></table>
+<p>
+
+Now that someone else (Sampo Kellomak) has done the heavy lifting
+of providing a low level Perl interface to the OpenSSL package,
+we wrote a simple wrapper module around his Net::SSLeay module
+to provide SSL support in Linklint.
+
+<p>
+
+Be warned, this beta version requires the OpenSSL package and the
+Net::SSLeay module (and the Net::SSLeay::Handle wrapper) in order to
+run.  You will need to install these first which is fairly easy (if
+you have root) on Linux.  Your Win32 mileage may vary.
+
+<p>
+
+Once installed, you use <font color="#cc0000"><tt><b>-http</b></tt></font> to check HTTP sites and
+<font color="#cc0000"><tt><b>-https</b></tt></font> to check HTTPS sites.
+
+</blockquote>
+
+<p>
+
+<table width="90%" cellpadding=0 border=0>
+<tr><td colspan=3 bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+<tr>
+<td>
+<a href="http://www.linklint.org">
+<img src=linklint.gif alt="Checked by Linklint" border=0 WIDTH="74" HEIGHT="29">
+</a>
+</td>
+<td></td>
+<td align=right>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+&copy; Copyright 1997 - 2001
+
+<a href=mailto:jbowlin@linklint.org>
+James B. Bowlin
+</a>
+
+</font></font>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- HTML pre-processed by htp 1.11 RELEASE -->
+
+</body>
+</html>
+
+
+
+
+

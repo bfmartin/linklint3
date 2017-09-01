@@ -1,0 +1,848 @@
+<html><head><title>
+
+Linklint Documentation - how it works
+
+</title></head><body text="#000000" link="#6666aa" vlink="#6688aa" alink="#6688aa" bgcolor="#ffffff">  
+
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=5>
+<a name=top>
+Linklint Documentation - how it works
+</a>
+</font>
+
+<table cellpadding=0 cellspacing=2 border=0 width="90%">
+<tr><td bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+</table>
+
+<font size=3>
+Version 2.3.5 August 13, 2001
+</font>
+
+
+
+<p>
+
+<table cellpadding=0 cellspacing=1 border=0><tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+
+
+</td></tr>
+</table></td></tr></table>
+
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+</table></td></tr></table>
+
+</td></tr>
+
+<tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="white" align=right>
+<font size=2 face="helvetica,sans serif,ariel"><font color="#8888dd"><b>
+documentation
+</b></font></font>
+</td></tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="index.html">
+Introduction
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="new.html">
+What's&nbsp;New
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="inputs.html">
+Inputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="outputs.html">
+Outputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="hints.html">
+Hints
+</a>
+</font></td>
+  
+
+<td align=center bgcolor="white">
+<font size=2 face="helvetica,sans serif,ariel"><font color="#dd6666">
+How it works
+</font>
+
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="bugs.html">
+Bugs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="doc_index.html">
+Index
+</a>
+</font></td>
+
+</tr>
+</table></td></tr></table>
+
+</td></tr>
+
+
+<tr><td align=right>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="white" align=right>
+  <font size=2 face="helvetica,sans serif,ariel">
+  <font color="#8888dd">
+  <b>
+    on this page
+  </b>
+  </font>
+  </font>
+</td>
+</tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="#f8f8ff">
+<font size=2 face="helvetica,sans serif,ariel">
+
+<a href="#linkset">
+Seeds
+</a>
+      &middot;
+<a href="#recursion">
+Recursion
+</a>
+    &middot;
+<a href="#parse">
+Parsing
+</a>
+        &middot;
+<a href="#resolve">
+Resolving&nbsp;links
+</a>
+      &middot;
+<a href="#default">
+Default&nbsp;Files
+</a>
+      &middot;
+<a href="#imagemap">
+Image&nbsp;Maps
+</a>
+     &middot;
+<a href="#status_cache">
+Status&nbsp;Cache
+</a>
+
+</font>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+
+<blockquote>
+
+This page explains in more detail how Linklint performs site checks.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="linkset">
+Creating Seeds for a Site Check
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+A linkset (entered on the command line) specifies a set of links to
+check.  For each linkset a <i>seed</i> is created for starting
+Linklint's search of your site.  If the linkset contains no wildcard
+characters (<tt><b>@</b></tt> and <tt><b>#</b></tt>), it must be a single link and the complete
+linkset becomes a seed file.  If the linkset contains wildcard
+characters, the seed is the longest string of non-wildcard characters
+starting with the leading "/" and ending with the last "/" before a
+wildcard. For example, if you specify <tt><b>/@</b></tt> to check your
+entire site, Linklint will start with one seed file "/" which is the
+<b><a href="#default">default file</a></b> for your root directory (sometimes
+called your <i>home page</i>).
+
+<p>
+
+Linklint does not have (or need) a <i>-seed</i> option.  A linkset
+without wildcard characters is the same thing as a seed file.  In
+fact, if you have a list of specific HTML pages to check, just put the
+paths, (one per line) in a file and tell Linklint that this is a
+command file (single leading @ sign before the filename).  Make sure
+that you list only the paths (no http://, and no hostname) otherwise
+Linklint will do a remote URL check on your pages (it will see if the
+pages exist but it won't check the links on your pages).
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="recursion">
+Site Check Recursion
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Linklint tries to find all of the pages and files in a site using
+recursion.  Each seed is checked and if it is an HTML file it is
+parsed creating a new list of files to check.  These files are
+checked creating new lists of files to check and so on.  This process
+continues until one of the mechanisms to stop recursion kicks in.
+
+<p>
+
+The primary method used to stop recursion is to only check local
+links. A link is considered local if either: it resolves to a file
+reference without a scheme or host (<i>i.e.</i> <tt>/something</tt>),
+or it resolves to <tt>http://hostname/. . .</tt> and <i>-host
+hostname</i> was specified.
+
+<p>
+
+The second method for halting recursion is the use of specific
+linksets.  Only HTML pages that match one or more of the linksets
+you specify will be checked for more links.  HTML pages which don't
+match any of the linksets will be <i>skipped,</i> which means they are
+checked to see if they exist but none of the links inside the file
+are added to the list of files to check.  You can also specifically
+<i>-skip</i> sets of HTML files or <i>-limit</i> the total number of
+HTML files checked.
+
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="parse">
+Parsing HTML Files
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+These are the rules Linklint uses to extract links from HTML files.
+
+<p>
+
+Any tags inclosed inside of comments tags:
+
+<tt><b>&lt;!-- . . . --&gt;</b></tt><br>
+
+or script tags:
+
+ <tt><b>&lt;script&gt; . . . &lt;/script&gt;</b></tt>
+
+are ignored.
+
+<p> 
+
+The <tt><b>&lt;base href=<font color="#009900">URL</font>&gt;</b></tt> tag will cause Linklint to set
+the base scheme, host, path, and file to the appropriate parts of
+<tt><font color="#009900">URL</font></tt> for the remainder of the file.  I've tried to emulate
+the behavior of the Netscape Navigator 3.0 browser.  In general
+missing elements from the front part of a url are filled in from the
+base specification.
+
+
+<p>
+
+Links are extracted from the following tags:
+
+<p>
+<table cellspacing=0 cellpadding=0 border=0>
+<tr>
+<td><img src=dot.gif width=20 height=1 alt=""></td>
+<td align=right>
+<font size=2 face="helvetica,sans serif,ariel">
+
+&lt;a  </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ href=<font color="#cc0000">LINK</font> name=<font color="#009900">NAME</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;applet  </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ code=<font color="#cc0000">LINK</font> codebase=<font color="#009900">BASE</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;area    </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ href=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;bgsound </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;body    </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ background=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;embed   </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;form    </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ action=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;frame   </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;img     </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font> lowsrc=<font color="#cc0000">LINK</font> dynsrc=<font color="#cc0000">LINK</font> usemap=<font color="#009900">NAME</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;input   </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;map     </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ name=<font color="#009900">NAME</font>&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;meta    </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ http-equiv=refresh content="... href=<font color="#cc0000">LINK</font>"&gt;
+</font></td></tr>
+
+<tr>
+<td></td>
+<td align=right><font size=2 face="helvetica,sans serif,ariel">
+&lt;script  </font></td>
+<td><font size=2 face="helvetica,sans serif,ariel">
+ src=<font color="#cc0000">LINK</font>&gt;
+
+</font></td></tr></table>
+<p>
+
+Tag and attribute names are case insensitive.  A <tt><font color="#cc0000">LINK</font></tt> can
+be bare or enclosed in single or double quotes.  The characters
+<tt><b>&lt;</b></tt> and <tt><b>&gt;</b></tt> are allowed inside of a tag only if
+they are enclosed in single or double quotes.  Arbitrary whitespace
+is allowed around the <tt><b>=</b></tt> sign and between a tag's name and
+its attributes.
+
+<p>
+
+Tags and/or attributes that do not match any of the above criteria
+are ignored.
+
+<p>
+
+All the links found on an HTML page are checked.  Non-HTML links are
+checked only for existence.  If a link is to an HTML file, it will
+also get parsed subject to the rules of <b><a href="#recursion">recursion</a></b>.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="resolve">
+Resolving Links
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+In order to be able to follow links properly and to ensure that
+links get checked only once, all links are made absolute before
+they are checked.   I have tried to use the same rules as a browser
+for making links absolute.  You can use the <i>-db3</i> flag to
+see how links get resolved.  This flag causes every tag from
+an HTML file that contains a link to get printed out in the log
+file followed by the fully expanded link.
+
+<p>
+
+If a <i>-host</i> is specified, links starting with
+"<tt>http://host</tt>" have this text removed, creating a local link.
+Thus all local links will start with "/" followed by a full path from
+the server root to the file to be checked.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="default">
+Default Index Files
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Http servers treat a link to a directory followed by a "/" as a
+default file.  The server will look for a (server specific) default
+file in the directory and serve that up if it exists.  Otherwise the
+server will generate a listing of all of the files and subdirectories
+in the directory.
+
+<p>
+
+Linklint emulates this behavior in local site checks by searching for
+its own list of default files: <i>home.html, index.html, index.shtml,
+index.htm, index.cgi, wwwhome.html, </i>and <i>welcome.html</i>.  If
+none of these are found, all the files and subdirectories in the
+directory are checked.  You can change the set of default files
+Linklint looks for with the <i>-index filename</i> option which will
+replace the built-in set with the file(s) you specify.  On the
+command line each default file must be preceded with the
+<i>-index</i> flag.  If all of the default files are in lowercase,
+the search is case insensitive.  If any of the files has an uppercase
+letter, the search is case sensitive.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="imagemap">
+Server-side Image Maps
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Linklint can check all links that are used in both client-side and
+server-side image maps.  Client-side image maps are handled
+automatically since Linklint parses the <tt>&lt;area href=LINK&gt;</tt>
+tag in HTML files.
+
+<p>
+
+Server-side image maps are a little bit tricky.  Some servers have
+the imagemap CGI software built-in so links ending in <i>.map</i> are
+treated as map files and automatically sent to the image map program for
+processing.  Linklint mimics this behavior.  Any link ending in
+<i>.map</i> is parsed as if it were a map file.  In addition, all
+<i>.map</i> links are checked locally even if the <i>-http</i> flag
+is used since map files are generally not accessible directly via http.
+
+<p>
+Some servers require server-side image map links to contains
+the path of the CGI image map program followed by the path to the
+map file as in:
+
+<p>
+<tt>&lt;a href=/cgi-bin/imagemap/dir/info.map&gt;</tt>.
+<p>
+
+Here <i>/cgi-bin/imagemap</i> is the location of the image map CGI
+program and <i>/dir/info.map</i> is the location of the map file.
+Linklint can resolve these links and read the map file (locally only,
+even if <i>-http</i> is used). However, you must provide the path
+from your server root directory to your image map program using the
+<i>-map</i> option.  Three common image map specifications are:
+<ul><tt><b> <li>-map /cgi-bin/imagemap <li>-map /cgi-bin/imagemap.exe
+<li>-map cgi-bin/htimage </b></tt></ul>
+
+For example, if you set "<tt>-map /cgi-bin/imagemap</tt>", the link
+<i>/cgi-bin/imagemap/dir/info.map</i> will be transformed to
+<i>/dir/info.map</i> which will be read in locally and parsed as a
+map file.  You need to be sure to set <i>-root</i> properly for
+Linklint to be able to find the map file.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="status_cache">
+How the Status Cache Works
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Linklint uses a combination of three different methods to keep track
+of remote URL modification times:
+
+<dl>
+
+<dt> <b>Last-Modified date</b>
+<dd> Many web servers, let Linklint know that last date a file
+     was modified.  If this date is available for a page then Linklint 
+     uses it for keeping track of changes.
+
+<dt> <b>If-Modified-Since requests</b>
+
+<dd> If the <i>Last-Modified</i> is not available then Linklint tries
+     an <i>If-Modified-Since</i> request.  Linklint asks if the page
+     has been modified since the last time (according to Linklint) it
+     was checked. 
+
+<dt> <b>Checksum of the remote file</b>
+<dd> If neither method above is available on a remote server then
+     Linklint reads in the entire remote file, makes a checksum
+     of its contents and uses this checksum to keep track of changes.
+</dl>
+
+These methods are totally transparent to the Linklint user (you). For
+each URL the most efficient method is tried first, and the checksum
+is only used as a last resort.
+
+</blockquote>
+
+<table cellpadding=0 cellspacing=2 border=0 width="90%">
+<tr><td bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+</table>
+
+<p>
+
+<table cellpadding=0 cellspacing=1 border=0><tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+
+
+</td></tr>
+</table></td></tr></table>
+
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+</table></td></tr></table>
+
+</td></tr>
+
+<tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="white" align=right>
+<font size=2 face="helvetica,sans serif,ariel"><font color="#8888dd"><b>
+documentation
+</b></font></font>
+</td></tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="index.html">
+Introduction
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="new.html">
+What's&nbsp;New
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="inputs.html">
+Inputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="outputs.html">
+Outputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="hints.html">
+Hints
+</a>
+</font></td>
+  
+
+<td align=center bgcolor="white">
+<font size=2 face="helvetica,sans serif,ariel"><font color="#dd6666">
+How it works
+</font>
+
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="bugs.html">
+Bugs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="doc_index.html">
+Index
+</a>
+</font></td>
+
+</tr>
+</table></td></tr></table>
+
+</td></tr>
+
+
+<tr><td align=right>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="white" align=right>
+  <font size=2 face="helvetica,sans serif,ariel">
+  <font color="#8888dd">
+  <b>
+    on this page
+  </b>
+  </font>
+  </font>
+</td>
+</tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="#f8f8ff">
+<font size=2 face="helvetica,sans serif,ariel">
+
+<a href="#linkset">
+Seeds
+</a>
+      &middot;
+<a href="#recursion">
+Recursion
+</a>
+    &middot;
+<a href="#parse">
+Parsing
+</a>
+        &middot;
+<a href="#resolve">
+Resolving&nbsp;links
+</a>
+      &middot;
+<a href="#default">
+Default&nbsp;Files
+</a>
+      &middot;
+<a href="#imagemap">
+Image&nbsp;Maps
+</a>
+     &middot;
+<a href="#status_cache">
+Status&nbsp;Cache
+</a>
+
+</font>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+<p>
+
+<table width="90%" cellpadding=0 border=0>
+<tr><td colspan=3 bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+<tr>
+<td>
+<a href="http://www.linklint.org">
+<img src=linklint.gif alt="Checked by Linklint" border=0 WIDTH="74" HEIGHT="29">
+</a>
+</td>
+<td></td>
+<td align=right>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+&copy; Copyright 1997 - 2001
+
+<a href=mailto:jbowlin@linklint.org>
+James B. Bowlin
+</a>
+
+</font></font>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- HTML pre-processed by htp 1.11 RELEASE -->
+
+</body></html>

@@ -1,0 +1,583 @@
+<html><head><title>
+
+Linklint Documentation - Known Bugs
+
+</title></head><body text="#000000" link="#6666aa" vlink="#6688aa" alink="#6688aa" bgcolor="#ffffff">  
+
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=5>
+<a name=top>
+Linklint Documentation - Known Bugs
+</a>
+</font>
+
+<table cellpadding=0 cellspacing=2 border=0 width="90%">
+<tr><td bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+</table>
+
+<font size=3>
+Version 2.3.5 August 13, 2001
+</font>
+
+
+
+<p>
+
+<table cellpadding=0 cellspacing=1 border=0><tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+
+
+</td></tr>
+</table></td></tr></table>
+
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+</table></td></tr></table>
+
+</td></tr>
+
+<tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="white" align=right>
+<font size=2 face="helvetica,sans serif,ariel"><font color="#8888dd"><b>
+documentation
+</b></font></font>
+</td></tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="index.html">
+Introduction
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="new.html">
+What's&nbsp;New
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="inputs.html">
+Inputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="outputs.html">
+Outputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="hints.html">
+Hints
+</a>
+</font></td>
+  
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="howitworks.html">
+How it works
+</a>
+</font></td>
+
+<td align=center bgcolor="white">
+<font size=2 face="helvetica,sans serif,ariel"><font color="#dd6666">
+Bugs
+</font>
+
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="doc_index.html">
+Index
+</a>
+</font></td>
+
+</tr>
+</table></td></tr></table>
+
+</td></tr>
+
+
+<tr><td align=right>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="white" align=right>
+  <font size=2 face="helvetica,sans serif,ariel">
+  <font color="#8888dd">
+  <b>
+    on this page
+  </b>
+  </font>
+  </font>
+</td>
+</tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="#f8f8ff">
+<font size=2 face="helvetica,sans serif,ariel">
+
+<a href="#bug_reports">
+Bug Reports
+</a>
+ &middot;
+<a href="#memory">
+Memory
+</a>
+ &middot;
+<a href="#parsing">
+Parsing
+</a>
+ &middot;
+<a href="#wont_check">
+Won't&nbsp;Check
+</a>
+
+</font>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+
+<blockquote>
+
+Linklint has been used on hundreds (maybe thousands) of sites around
+the world for over four years.  When it was initially released (in
+1997) many bugs were reported and fixed.  After that, there were only
+a small handful of bug reports (all of which were fixed in release
+2.3).
+
+<p>
+
+If you read all of the documentation and then start using Linklint
+there is a very high probability that it will work correctly.  In the
+spirit of Perl, Linklint has been designed to "<i>do the right
+thing</i>".  
+<p>
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="bug_reports">
+Bug Reports
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+If you think you have found a bug, please let us know at <b><a href="mailto:bugs@linklint.org">bugs@linklint.org</a></b>. 
+
+<p>
+
+It is often helpful if you include:
+
+<ul>
+<li> The version of linklint you are using (linklint -version)
+<li> The version of Perl you are using (perl -V)
+<li> The name and version of your operating system
+<li> Your Linklint command line and/or command file(s)
+</ul>
+
+<p>
+
+Requests for information and comments are also welcomed.  You can send
+these to <b><a href="mailto:info@linklint.org">info@linklint.org</a></b>.
+
+<p>
+
+Requests for information in the documentation that start out with
+"<i>I don't have time to read the documentation</i>" may not get a
+response.
+
+
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="memory">
+Memory Problems
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+No doubt about it, Linklint can be a big memory hog (for large sites).
+We have received several reports of Linklint being unable (or
+unwilling) to write the HTML output files after doing a site check.
+These have all been traced back to memory problems.
+
+<p>
+
+We tried to optimize Linklint for speed and use a lot of memory in
+order to make it fast.  We have had one report that there is a huge
+difference in memory consumption depending on the operating system
+Linklint is running under.  It was reported that a Sun used almost
+1/10th the memory as Linux when checking the same site ( 68M on the
+Sun system versus about 464M on Linux).
+
+<p>
+
+There is a clear need for:
+<dl>
+<dt>
+<b>
+(a) a re-write in Object Oriented Perl 5
+</b>
+</dt>
+<dd>
+This could significantly ease memory usage with no (or very little)
+sacrifice in speed.
+<p>
+</dd>
+<dt>
+<b>
+(b) hooks to a database back-end
+</b>
+</dt>
+<dd>
+This would virtually eliminate the memory problems but there could
+be a significant reduction in speed.
+</dd>
+</dl>
+
+<p>
+
+In the meantime, if you are running out of memory there are <b><a href="hints.html#memory">several hints</a></b> that will help ease this
+problem.
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="parsing">
+Parsing Problems
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Linklint parses HTML files as fast as possible.  It was designed to be
+a fast <i>link checker</i> and not an <i>HTML validator</i>.
+Originally Linklint was written "to spec" but after a flurry of bug
+reports (and fixes) it now does a very good job at emulating a
+Netscape Browser including many of this browsers idiosyncrasies.
+
+<p>
+
+One trick that lets Linklint parse HTML quickly is to use the "&lt;"
+character as the effective "new-line", so HTML files are split on
+"&lt;" as they are read.  This is very fast but has two downsides.
+<ol>
+
+<li> (<b>minor</b>) If your HTML tags contains "&lt;" inside of HTML    
+     tags as in 
+     
+     <tt>&lt;img&nbsp;src=back.gif&nbsp;alt="&lt;&lt;&lt;"&gt;<tt>
+     
+     then Linklint will need to do some backtracking (which will
+     slow it down a bit.  Solution: always use &amp;lt; instead
+     of &lt; inside of HTML tags.  Since this use of bare "&lt;"
+     inside of HTML tags is uncommon Linklint remains very fast
+     "on average".
+
+     <p>
+
+<li> (<b>occasional problem</b>) if an HTML tag is missing a closing 
+     "&gt;" or if you have
+     a bare "&lt;" character in the text of your page, Linklint will
+     read in everything in the file until the next &gt; (or
+     the end of file) as a single tag.  This can cause a memory
+     problem (<b><a href="#memory">see above</a></b>.).  
+
+     These problems are rare and can usually be tracked down quickly.
+     <br>
+     <b>Solutions:</b> 
+     <p>
+     <ol>
+     <li>
+     Use  Weblint to check the HTML in your pages before link checking.  
+     <li>
+     Use the log.txt Linklint output file to track down the offending
+     page (it is usually the last page checked).
+     </ol>
+     
+
+
+</ol>
+
+
+</font>
+</blockquote>
+<table bgcolor="#8888dd" width="90%" cellpadding=3 cellspacing=2 border=0>
+<tr>
+<td>
+<font size=2 face="helvetica,sans serif,ariel">
+<font size=3 color="#ffffff"><b>
+<a name="wont_check">
+What Linklint Won't Check
+</a>
+</b></font>
+</font>
+</td></tr></table>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+
+<a href="#top">&nbsp;(top)</a>
+<a href="doc_index.html#command_index">&nbsp;(command index)</a>
+<a href="doc_index.html#topic_index">&nbsp;(topic index)</a>
+
+</font></font>
+
+<blockquote>
+<font size=2 face="helvetica,sans serif,ariel">
+
+Linklint will not be able to track down links that require specific
+visitor form input.  For example, a search engine site uses form input
+from visitors to generate new HTML pages.  These pages would not be
+checked by Linklint.  Likewise, if you have written your own CGI
+program that uses the <i>IsMap</i> attribute to create new links
+depending on where a visitor clicks on an image, Linklint will not be
+able to find these links.
+
+</blockquote>
+
+<table cellpadding=0 cellspacing=2 border=0 width="90%">
+<tr><td bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+</table>
+
+<p>
+
+<table cellpadding=0 cellspacing=1 border=0><tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+
+
+</td></tr>
+</table></td></tr></table>
+
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+</table></td></tr></table>
+
+</td></tr>
+
+<tr><td align=right>
+
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="white" align=right>
+<font size=2 face="helvetica,sans serif,ariel"><font color="#8888dd"><b>
+documentation
+</b></font></font>
+</td></tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr>
+
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="index.html">
+Introduction
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="new.html">
+What's&nbsp;New
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="inputs.html">
+Inputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="outputs.html">
+Outputs
+</a>
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="hints.html">
+Hints
+</a>
+</font></td>
+  
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="howitworks.html">
+How it works
+</a>
+</font></td>
+
+<td align=center bgcolor="white">
+<font size=2 face="helvetica,sans serif,ariel"><font color="#dd6666">
+Bugs
+</font>
+
+</font></td>
+<td align=center bgcolor="#ddddff">
+<font size=2 face="helvetica,sans serif,ariel">
+<a href="doc_index.html">
+Index
+</a>
+</font></td>
+
+</tr>
+</table></td></tr></table>
+
+</td></tr>
+
+
+<tr><td align=right>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="white" align=right>
+  <font size=2 face="helvetica,sans serif,ariel">
+  <font color="#8888dd">
+  <b>
+    on this page
+  </b>
+  </font>
+  </font>
+</td>
+</tr>
+</table></td></tr></table>
+</td><td>
+<table cellpadding=0 cellspacing=0 border=0 bgcolor="#8888dd">
+<tr><td>
+<table bgcolor="ddddff" cellpadding=2 cellspacing=1 border=0>
+<tr><td bgcolor="#f8f8ff">
+<font size=2 face="helvetica,sans serif,ariel">
+
+<a href="#bug_reports">
+Bug Reports
+</a>
+ &middot;
+<a href="#memory">
+Memory
+</a>
+ &middot;
+<a href="#parsing">
+Parsing
+</a>
+ &middot;
+<a href="#wont_check">
+Won't&nbsp;Check
+</a>
+
+</font>
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+
+<p>
+
+<table width="90%" cellpadding=0 border=0>
+<tr><td colspan=3 bgcolor="#8888dd"><img src=dot.gif width=1 height=1 alt=""></td></tr>
+<tr>
+<td>
+<a href="http://www.linklint.org">
+<img src=linklint.gif alt="Checked by Linklint" border=0 WIDTH="74" HEIGHT="29">
+</a>
+</td>
+<td></td>
+<td align=right>
+
+<font size=2 face="helvetica,sans serif,ariel"><font size=2>
+&copy; Copyright 1997 - 2001
+
+<a href=mailto:jbowlin@linklint.org>
+James B. Bowlin
+</a>
+
+</font></font>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- HTML pre-processed by htp 1.11 RELEASE -->
+
+</body></html>

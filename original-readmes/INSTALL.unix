@@ -1,0 +1,64 @@
+Unix Installation
+=================
+
+Quick Install
+--------------
+
+   tar zxvf linklint_X.X.tgz
+   cd linklint-X.X.X
+   cp linklint-X.X.X /usr/local/bin/linklint
+          --  or --
+   cp linklint-X.X.X /usr/local/bin/
+   cd /usr/local/bin; ln  -s linklint-X.X.X linklint
+
+Detailed Installation Instructions
+----------------------------------
+
+1. Choose a directory in which to install Linklint.  If you have root
+   privileges /usr/local/src/ would be a reasonable place:
+
+    # cd /usr/local/src/
+
+    otherwise, you might want to install Linklint in your home
+    directory:
+
+     $ cd
+
+ 2. Download linklint-X.X.X.tar.gz Say ok to warnings from browser and
+    choose "Save File" option.
+
+ 4. Unzip and untar the distribution:
+
+    $ tar -zxvf linklint-X.X.X.tar.gz
+
+ 5. Move the directory just created:
+
+    $ cd linklint-X.X.X/
+
+ 6. Copy linklint to a directory on your path.  If you have root
+    privileges then /usr/local/bin is a good place
+
+    # cp linklint-X.X.X /usr/local/bin/linklint
+
+    otherwise you might try putting linklint in your ~/bin/ directory:
+
+    $ cp linklint ~/bin/
+   
+    You can instead use a symbolic link as in:
+
+    # cp linklint-X.X.X /usr/local/bin
+    # cd /usr/local/bin
+    # ln -s linklint-X.X.X linklint
+
+If you have problems putting linklint into a directory on your path,
+you can always run linklint as a Perl script:
+
+    $ perl linklint [options]
+
+If your Perl program is not located at /usr/bin/perl and you want to
+run linklint as a command then you will have to change the first line
+of linklint to point to your Perl program.  Use the command "which
+perl" to find out where your Perl program resides.
+
+
+Enjoy!
