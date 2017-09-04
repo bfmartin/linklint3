@@ -32,8 +32,8 @@
 # 
 #========================================================================
 
-$version = "3.0.0";
-$date    = "2017-09-01";
+$version = "3.0.1";
+$date    = "2017-09-04";
 $prog    = "linklint";
 
 $Usage1 = <<USAGE1;
@@ -1407,6 +1407,11 @@ TAG:
                 ($Anchor{"$CurFile#$+"} = "\n");
         }
         elsif ( /^div$/ )
+        {
+            $att =~ s/\sid${ATTRIB}//io && ! $Arg{no_anchors} &&
+                ($Anchor{"$CurFile#$+"} = "\n");
+        }
+        elsif ( /^article$/ )
         {
             $att =~ s/\sid${ATTRIB}//io && ! $Arg{no_anchors} &&
                 ($Anchor{"$CurFile#$+"} = "\n");
