@@ -32,7 +32,7 @@
 # 
 #========================================================================
 
-$version = "3.0.1";
+$version = "3.0.2";
 $date    = "2017-09-04";
 $prog    = "linklint";
 
@@ -478,7 +478,7 @@ $StandardMaps = '(/imagemap|/cgi-(b|w)in/(imagemap.exe|htimage))';
 'default index::\(default\)',
 "html::\.($HtmlExts)\$",
 'map::\.map$',
-'image::\.(gif|jpg|jpeg|tif|tiff|pic|pict|hdf|ras|xbm)$',
+'image::\.(gif|jpg|jpeg|tif|tiff|pic|pict|hdf|ras|xbm|png|svg)$',
 'text::\.txt$',
 'audio::\.(au|snd|wav|aif|aiff|midi|mid)$',
 'video::\.(mpg|mpeg|avi|qt|mov)$',

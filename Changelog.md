@@ -1,5 +1,9 @@
 2017-09-04	Byron F. Martin <https://www.bfmartin.ca/contact/>
 
+	* linklint: added png and svg to list of image formats
+
+2017-09-04	Byron F. Martin <https://www.bfmartin.ca/contact/>
+
 	* linklint: added 'article id="link"' to anchors
 
 2017-09-01	Byron F. Martin <https://www.bfmartin.ca/contact/>
